@@ -31,6 +31,7 @@ class TocMachine(GraphMachine):
     def on_exit_recommend(self):
         print("Leaving recommend")
     
-    def  on_enter_user(self):
+    def  on_enter_inform(self,event):
+        reply_token = event.reply_token
         send_text_message(reply_token,"What would you like to watch?")
 
