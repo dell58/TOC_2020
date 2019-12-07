@@ -39,7 +39,6 @@ def send_inform_btn(reply_token):
             ]
         )
     )
-    line_bot_api = LineBotApi(channel_access_token)
     line_bot_api.reply_message(reply_token, message)
 
 def send_list():
@@ -59,4 +58,4 @@ def send_list():
         "Movie Name":movies
     }
     df  = pd.DataFrame(dict)
-   # send_text_message(reply_token)
+    return df
