@@ -13,7 +13,7 @@ def send_text_message(reply_token, text):
     return "OK"
 
 
-def send_inform_btn():
+def send_inform_btn(reply_token):
     message = TemplateSendMessage(
     alt_text='Buttons template',
     template=ButtonsTemplate(
@@ -37,4 +37,4 @@ def send_inform_btn():
             ]
         )
     )
-    line_bot_api.reply_message(event.reply_token, message)
+    line_bot_api.reply_message(reply_token, message)
