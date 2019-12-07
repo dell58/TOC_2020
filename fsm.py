@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message,send_list
+from utils import send_text_message
 
 
 class TocMachine(GraphMachine):
@@ -25,8 +25,7 @@ class TocMachine(GraphMachine):
 
     def on_enter_recommend(self, event):
         reply_token = event.reply_token
-        df = send_list()
-        send_text_message(reply_token, df)
+        send_text_message(reply_token, "Recommend list")
         self.go_back()
 
     def on_exit_recommend(self):

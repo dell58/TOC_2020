@@ -41,21 +41,21 @@ def send_text_message(reply_token, text):
 #     )
 #     line_bot_api.reply_message(reply_token, message)
 
-def send_list():
-    url = 'https://www.rottentomatoes.com/'
-    r = requests.get(url)
-    web_content = r.text #get the html of the web
-    soup = BeautifulSoup(web_content,'html.parser')
-    top_office = soup.find("div",id="homepage-top-box-office",class_="listings")
-    scores = top_office.find_all("span",class_="tMeterScore")
-    scores_num = [e.text for e in scores]
-    movies=[]
-    for td in top_office.find_all("td",class_="middle_col"):
-        name = td.find("a")
-        movies.append(name.text)
-    dict = {
-        "Rating":scores_num,
-        "Movie Name":movies
-    }
-    df  = pd.DataFrame(dict)
-    return df
+# def send_list():
+#     url = 'https://www.rottentomatoes.com/'
+#     r = requests.get(url)
+#     web_content = r.text #get the html of the web
+#     soup = BeautifulSoup(web_content,'html.parser')
+#     top_office = soup.find("div",id="homepage-top-box-office",class_="listings")
+#     scores = top_office.find_all("span",class_="tMeterScore")
+#     scores_num = [e.text for e in scores]
+#     movies=[]
+#     for td in top_office.find_all("td",class_="middle_col"):
+#         name = td.find("a")
+#         movies.append(name.text)
+#     dict = {
+#         "Rating":scores_num,
+#         "Movie Name":movies
+#     }
+#     df  = pd.DataFrame(dict)
+#     return df
