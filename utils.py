@@ -20,3 +20,30 @@ def send_image(reply_token,url):
     line_bot_api = LineBotApi(channel_access_token)
     line_bot_api.reply_message(reply_token, message)
     return 'OK'
+def send_inform(reply_token,url):
+    message = TemplateSendMessage(
+    alt_text='Buttons template',
+    template=ButtonsTemplate(
+        thumbnail_image_url='https://imgur.com/tbWMm4D',
+        title='Menu',
+        text='Please select',
+        actions=[
+            PostbackTemplateAction(
+                label='postback',
+                text='postback text',
+                data='action=buy&itemid=1'
+            ),
+            MessageTemplateAction(
+                label='message',
+                text='message text'
+            ),
+            URITemplateAction(
+                label='uri',
+               # uri='http://example.com/'
+            )
+        ]
+        )
+    )
+    line_bot_api = LineBotApi(channel_access_token)
+    line_bot_api.reply_message(reply_token, message)
+    return 'OK'
