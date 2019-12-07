@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message
+from utils import send_text_message , send_image
 
 
 class TocMachine(GraphMachine):
@@ -26,10 +26,10 @@ class TocMachine(GraphMachine):
         print("Leaving state1")
 
     def on_enter_state2(self, event):
-        print("I'm entering state2")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state2")
+        url = 'https://imgur.com/tbWMm4D'
+        send_image(url)
+        #reply_token = event.reply_token
+        #send_text_message(reply_token, "Trigger state2")
         self.go_back()
 
     def on_exit_state2(self):
