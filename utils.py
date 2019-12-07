@@ -13,12 +13,12 @@ def send_text_message(reply_token, text):
 
     return "OK"
 
-def send_image(url):
-    message = ImageSendMessage(
-        original_content_url=url,
-        preview_image_url=url
-    )
-    line_bot_api.reply_message(event.reply_token, message)
+# def send_image(url):
+#     message = ImageSendMessage(
+#         original_content_url=url,
+#         preview_image_url=url
+#     )
+#     line_bot_api.reply_message(event.reply_token, message)
 """
 def send_image_url(id, img_url):
     pass
