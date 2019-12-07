@@ -129,8 +129,8 @@ sudo snap install --classic heroku
 3. Set Environment - Line Messaging API Secret Keys
 
 	```
-	heroku config:set LINE_CHANNEL_SECRET=your_line_channel_secret
-	heroku config:set LINE_CHANNEL_ACCESS_TOKEN=your_line_channel_access_token
+	heroku config:set LINE_CHANNEL_SECRET=67d34d61b38378ddeb1d14ba984a65ae
+	heroku config:set LINE_CHANNEL_ACCESS_TOKEN=AcSoeSxfO7aAMriVXyeh258u9VBqE4SWVzXoYrAHguFVcXGrOxPU+y9GL/SZE0FGUFvxKnjJ095iHGcAW9qiK+fCVFJDsDprETKKR8/vW9Zj3OAby4nhGUrybuiwAkLTg48mZErGM91xHfEVCAAonAdB04t89/1O/w1cDnyilFU=
 	```
 
 4. Your Project is now running on Heroku!
