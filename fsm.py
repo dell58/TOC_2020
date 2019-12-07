@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message
+from utils import send_text_message,send_inform_btn
 
 
 class TocMachine(GraphMachine):
@@ -34,4 +34,5 @@ class TocMachine(GraphMachine):
     def  on_enter_inform(self,event):
         reply_token = event.reply_token
         send_text_message(reply_token,"What would you like to watch?")
+        send_inform_btn()
 
