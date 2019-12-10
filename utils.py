@@ -34,11 +34,11 @@ def send_inform(reply_token):
         actions=[
             MessageTemplateAction(
                 label='Movie trailer',
-                text='trailer'
+                text='Intro.'
             ),
             MessageTemplateAction(
                 label='Top office',
-                text='topoffice'
+                text='Recommend'
             ),
             URITemplateAction(
                 label='Search',

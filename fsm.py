@@ -41,6 +41,7 @@ class TocMachine(GraphMachine):
     def on_enter_inform(self,event):
         reply_token = event.reply_token
         send_inform(reply_token)
+        self.go_back()
     
     def is_going_to_topoffice(self, event):
         text = event.message.text
@@ -49,6 +50,15 @@ class TocMachine(GraphMachine):
     def on_enter_topoffice(self, event):
         reply_token = event.reply_token
         send_text_message(reply_token,"Frozen II")
+        self.go_back()
+    
+    def is_going_to_trailer(self, event):
+        text = event.message.text
+        return text.lower() == "intro."
+    
+    def on_enter_trailer(self, event):
+        reply_token = event.reply_token
+        send_text_message(reply_token,"Video")
         self.go_back()
 
         
