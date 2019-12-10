@@ -28,7 +28,7 @@ def send_inform(reply_token,url):
     message = TemplateSendMessage(
     alt_text='Buttons template',
     template=ButtonsTemplate(
-        thumbnail_image_url='https://imgur.com/tbWMm4D.jpg',
+        thumbnail_image_url=url,
         title='Menu',
         text='Please select',
         actions=[
@@ -43,7 +43,7 @@ def send_inform(reply_token,url):
             ),
             URITemplateAction(
                 label='uri',
-               # uri='http://example.com/'
+                uri='https://www.rottentomatoes.com/'
             )
         ]
         )

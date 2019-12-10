@@ -40,7 +40,8 @@ class TocMachine(GraphMachine):
     
     def on_enter_inform(self,event):
         reply_token = event.reply_token
-        send_text_message(reply_token,"top office")
+        url = "https://i.imgur.com/tbWMm4D.jpg"
+        send_inform(reply_token,url)
         self.go_back()
         
 
