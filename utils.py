@@ -30,19 +30,19 @@ def send_inform(reply_token,url):
     template=ButtonsTemplate(
         thumbnail_image_url=url,
         title='Menu',
-        text='Please select',
+        text='What would you like to watch?',
         actions=[
             PostbackTemplateAction(
-                label='postback',
-                text='postback text',
+                label='Recommend List',
+                text='recommend',
                 data='action=buy&itemid=1'
             ),
             MessageTemplateAction(
-                label='message',
-                text='message text'
+                label='Recommend List',
+                text='recommend'
             ),
             URITemplateAction(
-                label='uri',
+                label='Browswer',
                 uri='https://www.rottentomatoes.com/'
             )
         ]
