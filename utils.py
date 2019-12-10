@@ -1,6 +1,6 @@
 import os
-import requests
-from bs4 import BeautifulSoup
+# import requests
+# from bs4 import BeautifulSoup
 from linebot import LineBotApi, WebhookParser
 from linebot.models import *
 #MessageEvent, TextMessage, TextSendMessage
@@ -42,8 +42,8 @@ def send_inform(reply_token):
                 text='Recommend'
             ),
             URITemplateAction(
-                label='Search',
-                uri='https://www.rottentomatoes.com/'
+                label='Order Ticket',
+                uri='https://www.vscinemas.com.tw/vsweb/'
             )
         ]
         )
@@ -52,17 +52,17 @@ def send_inform(reply_token):
     line_bot_api.reply_message(reply_token, message)
     return 'OK'
 
-def get_topoffice():
-    url = 'https://www.rottentomatoes.com/'
-    r = requests.get(url)
-    web_content = r.text #get the html of the web
-    soup = BeautifulSoup(web_content,'html.parser')
-    top_office = soup.find("div",id="homepage-top-box-office",class_="listings")
-    movies=[]
-    for td in top_office.find_all("td",class_="middle_col"):
-        name = td.find("a")
-        movies.append(name.text)
-    final_list=""
-    for text in movies:
-        final_list += text + "\n"
-    return final_list
+# def get_topoffice():
+#     url = 'https://www.rottentomatoes.com/'
+#     r = requests.get(url)
+#     web_content = r.text #get the html of the web
+#     soup = BeautifulSoup(web_content,'html.parser')
+#     top_office = soup.find("div",id="homepage-top-box-office",class_="listings")
+#     movies=[]
+#     for td in top_office.find_all("td",class_="middle_col"):
+#         name = td.find("a")
+#         movies.append(name.text)
+#     final_list=""
+#     for text in movies:
+#         final_list += text + "\n"
+#     return final_list

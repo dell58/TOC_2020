@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message ,send_image,send_inform,get_topoffice
+from utils import send_text_message ,send_image,send_inform
 
 
 class TocMachine(GraphMachine):
@@ -59,7 +59,7 @@ class TocMachine(GraphMachine):
     
     def on_enter_trailer(self, event):
         reply_token = event.reply_token
-        send_text_message(reply_token,"Video")
+        send_text_message(reply_token,"Please enter the movie name you're interested.")
         self.go_back()
 
         
