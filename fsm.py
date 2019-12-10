@@ -27,7 +27,8 @@ class TocMachine(GraphMachine):
 
     def on_enter_state2(self, event):
         reply_token = event.reply_token
-        url = 'https://imgur.com/tbWMm4D'
+        url = "https://i.imgur.com/WvzfYKT.png"
+        # url = 'https://imgur.com/tbWMm4D'
         send_image(reply_token,url)
         self.go_back()
 
