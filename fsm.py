@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message ,send_image,send_inform
+from utils import send_text_message ,send_image,send_inform,get_topoffice
 
 
 class TocMachine(GraphMachine):
@@ -34,6 +34,7 @@ class TocMachine(GraphMachine):
     def on_exit_state2(self):
         print("Leaving state2")
     
+
     def is_going_to_inform(self,event):
         text = event.message.text
         return text.lower() == "menu"
