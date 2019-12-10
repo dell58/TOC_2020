@@ -34,7 +34,7 @@ class TocMachine(GraphMachine):
     def on_exit_state2(self):
         print("Leaving state2")
     
-
+######################################################
     def is_going_to_inform(self,event):
         text = event.message.text
         return text.lower() == "menu"
@@ -59,7 +59,12 @@ class TocMachine(GraphMachine):
     
     def on_enter_trailer(self, event):
         reply_token = event.reply_token
-        send_text_message(reply_token,"Please enter the movie name you're interested.")
+        send_text_message(reply_token,"Please enter the movie name you're interested in.")
+        self.advance()
+
+    def on_enter_trailer_search(self, event):
+        reply_token = event.reply_token
+        send_text_message(reply_token,"Print Search Result!")
         self.go_back()
 
         

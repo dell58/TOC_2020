@@ -52,6 +52,15 @@ def send_inform(reply_token):
     line_bot_api.reply_message(reply_token, message)
     return 'OK'
 
+def send_trailer(reply_token,url,pic_url):
+    message = VideoSendMessage(
+    original_content_url=url,
+    preview_image_url=pic_url
+    )
+    line_bot_api = LineBotApi(channel_access_token)
+    line_bot_api.reply_message(reply_token, message)
+    return"OK"
+
 # def get_topoffice():
 #     url = 'https://www.rottentomatoes.com/'
 #     r = requests.get(url)
