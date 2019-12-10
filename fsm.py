@@ -34,11 +34,11 @@ class TocMachine(GraphMachine):
     def on_exit_state2(self):
         print("Leaving state2")
     
-    def is_going_to_inform(self,event)
+    def is_going_to_inform(self,event):
         text = event.message.text
         return text.lower() == "start"
     
-    def on_enter_inform(self,event)
+    def on_enter_inform(self,event):
         reply_token = event.reply_token
         send_text_message(reply_token,"top office")
         self.go_back()
