@@ -24,12 +24,12 @@ def send_image(reply_token,url):
     return 'OK'
 
 
-def send_inform(reply_token,url):
+def send_inform(reply_token):
     message = TemplateSendMessage(
     alt_text='Buttons template',
     template=ButtonsTemplate(
-        thumbnail_image_url=url,
-        title='Menu',
+        thumbnail_image_url='https://png.pngtree.com/png-clipart/20190419/ourlarge/pngtree-movie-play-button-round-png-image_959268.jpg',
+        title='Movies',
         text='What would you like to watch?',
         actions=[
             MessageTemplateAction(

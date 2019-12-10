@@ -36,12 +36,20 @@ class TocMachine(GraphMachine):
     
     def is_going_to_inform(self,event):
         text = event.message.text
-        return text.lower() == "start"
+        return text.lower() == "menu"
     
     def on_enter_inform(self,event):
         reply_token = event.reply_token
-        url = "https://i.imgur.com/tbWMm4D.jpg"
-        send_inform(reply_token,url)
+        send_inform(reply_token)
+    
+    def is_going_to_topoffice(self, event):
+        text = event.message.text
+        return text.lower() == "recommend"
+    
+    def on_enter_topoffice(self, event):
+        reply_token = event.reply_token
+        send_text_message(reply_token,"Frozen II")
         self.go_back()
+
         
 
