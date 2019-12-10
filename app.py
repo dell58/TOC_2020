@@ -44,6 +44,7 @@ machine = TocMachine(
             "trigger": "advance",
             "source": "trailer",
             "dest": "trailer_search",
+            "conditions": "is_going_to_trailer_search"
         },
         {"trigger": "go_back", "source": ["state1", "state2","topoffice","trailer_search","inform"], "dest": "request_center"},
     ],

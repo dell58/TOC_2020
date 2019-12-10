@@ -60,7 +60,10 @@ class TocMachine(GraphMachine):
     def on_enter_trailer(self, event):
         reply_token = event.reply_token
         send_text_message(reply_token,"Please enter the movie name you're interested in.")
-        self.advance()
+
+    def is_going_to_trailer_search(self, event):
+        text = event.message.text
+        return text.lower() != ""
 
     def on_enter_trailer_search(self, event):
         reply_token = event.reply_token
