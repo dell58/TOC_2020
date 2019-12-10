@@ -32,17 +32,16 @@ def send_inform(reply_token,url):
         title='Menu',
         text='What would you like to watch?',
         actions=[
-            PostbackTemplateAction(
-                label='Recommend List',
-                text='recommend',
-                data='action=buy&itemid=1'
+            MessageTemplateAction(
+                label='Movie trailer',
+                text='trailer'
             ),
             MessageTemplateAction(
-                label='Recommend List',
-                text='recommend'
+                label='Top office',
+                text='topoffice'
             ),
             URITemplateAction(
-                label='Browswer',
+                label='Search',
                 uri='https://www.rottentomatoes.com/'
             )
         ]
