@@ -12,6 +12,8 @@ def send_text_message(reply_token, text):
     line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
     return "OK"
 
+
+
 def send_image(reply_token,url):
     message = ImageSendMessage(
         original_content_url=url,
@@ -20,11 +22,13 @@ def send_image(reply_token,url):
     line_bot_api = LineBotApi(channel_access_token)
     line_bot_api.reply_message(reply_token, message)
     return 'OK'
+
+
 def send_inform(reply_token,url):
     message = TemplateSendMessage(
     alt_text='Buttons template',
     template=ButtonsTemplate(
-        thumbnail_image_url='https://imgur.com/tbWMm4D',
+        thumbnail_image_url='https://imgur.com/tbWMm4D.jpg',
         title='Menu',
         text='Please select',
         actions=[
